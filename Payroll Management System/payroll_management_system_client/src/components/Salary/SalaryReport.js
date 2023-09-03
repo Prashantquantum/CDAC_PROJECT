@@ -120,7 +120,8 @@ export default class SalaryReport extends React.Component {
                                        <td>{salary.salary_total}</td>
                                        <td>
                                           <Link to={"/salary-add/"+salary.salary_id}>
-                                          <span className="glyphicon glyphicon-edit editi"></span>
+                                          {/* <span className="glyphicon glyphicon-edit editi"></span> */}
+                                          <span className="glyphicon glyphicon-refresh"></span>
                                           </Link>&nbsp;&nbsp;
                                           <a onClick={() => this.download_slip(salary.salary_slip)} href="#!">
                                              <span className="glyphicon glyphicon-download-alt"></span>

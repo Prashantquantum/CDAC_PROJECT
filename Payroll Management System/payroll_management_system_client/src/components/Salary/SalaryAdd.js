@@ -291,7 +291,7 @@ const SalaryAdd = ({ setAlert, salary, isAuthenticated }) => {
                                  </div>
                                  <div className="form-group">
                                     <div className="col-sm-offset-4 col-sm-8">
-                                       <button type="submit" className="btn btn-default">Submit</button>&nbsp;&nbsp;
+                                       <button type="submit" className="btn btn-default">Update</button>&nbsp;&nbsp;
                                        <button type="reset" className="btn btn-danger">Reset</button>
                                     </div>
                                  </div>

@@ -58,7 +58,15 @@ public class SalaryController {
 
 	@GetMapping("/salaries")
 	public List<Salary> getAllSalarys() {
-		return salaryRepository.findAll();
+		//return salaryRepository.findAll();
+			List<Salary> lis=	salaryRepository.findAll();
+				for (Salary sa:lis) {
+					sa.setSalary_basic(44444);
+					sa.setSalary_ca(4444);
+					sa.setSalary_hra(4444);
+					sa.setSalary_total(4444);
+				}
+				return lis;
 	}
 
 	@GetMapping("/salaries/search/{name}")
@@ -71,6 +79,8 @@ public class SalaryController {
 			return salaryRepository.serchUserByState(salaryState);
 	}
 	
+	//after clicking on submit these details will be seen in list
+	//display in list of salary
 	@GetMapping("/salaries/all-salaries/{id}")
 	public ArrayList getAllSalaryFields(@PathVariable(value = "id") String user_id) {
 		
@@ -101,6 +111,7 @@ public class SalaryController {
 				results.put("salary_employee_id",String.valueOf(salary_details.getSalary_employee_id()));
 				results.put("salary_month",String.valueOf(salary_details.getSalary_month()));
 				results.put("salary_working_days",String.valueOf(salary_details.getSalary_working_days()));
+//				results.put("salary_basic",String.valueOf(salary_details.getSalary_basic()));
 				results.put("salary_basic",String.valueOf(salary_details.getSalary_basic()));
 				results.put("salary_hra",String.valueOf(salary_details.getSalary_hra()));
 				results.put("salary_mediclaim",String.valueOf(salary_details.getSalary_mediclaim()));
@@ -124,11 +135,110 @@ public class SalaryController {
         return resultArray;
 	}
 	
+	
+//	@GetMapping("/salaries/all-salaries/{id}")
+//	public ArrayList getAllSalaryFields(@PathVariable(value = "id") String user_id) {
+//		
+//		String SQL = "SELECT sal, emp, mon from salary sal, user emp, month mon WHERE month_id = salary_month AND salary_employee_id = user_id";
+//		 Query q = entityManager.createQuery(SQL);
+//		 if(!user_id.equals("0")) {
+//			 System.out.print("User Id : "+user_id);
+//
+//			 SQL = "SELECT sal, emp, mon from salary sal, user emp, month mon WHERE month_id = salary_month AND salary_employee_id = user_id AND user_id = :user_id";
+//			 q = entityManager.createQuery(SQL);
+//			 q.setParameter("user_id", user_id);
+//		 } 
+//		 List<Object[]> salary = q.getResultList();
+//		 ArrayList<HashMap<String, Integer>> resultArray = new ArrayList();
+//		 
+//		 for ( Object[] row : salary ) {
+//			  User user_details = (User)row[ 1 ];
+//			  Salary salary_details = (Salary)row[ 0 ];
+//			  Month month_details = (Month)row[ 2 ];
+//			
+//			    HashMap<String, Integer> results = new HashMap();
+//			    results.put("salary_id",Integer.valueOf(salary_details.getSalary_id()));
+//			    results.put("month_name",Integer.valueOf(month_details.getMonth_name()));
+//			    results.put("user_id",Integer.parseInt( String.valueOf(user_details.getUser_id())));
+//				results.put("user_first_name",Integer.parseInt(user_details.getUser_first_name()));
+//				results.put("user_last_name",Integer.parseInt(user_details.getUser_last_name()));
+//				
+//				results.put("salary_employee_id",Integer.valueOf(salary_details.getSalary_employee_id()));
+//				results.put("salary_month",Integer.valueOf(salary_details.getSalary_month()));
+//				results.put("salary_working_days",Integer.valueOf(salary_details.getSalary_working_days()));
+//				results.put("salary_basic",Integer.parseInt(String.valueOf(salary_details.getSalary_basic())));
+//				results.put("salary_basic",Integer.valueOf(salary_details.getSalary_basic()+"popo"));
+//				results.put("salary_hra",Integer.valueOf(salary_details.getSalary_hra()));
+//				results.put("salary_mediclaim",Integer.valueOf(salary_details.getSalary_mediclaim()));
+//				results.put("salary_ta",Integer.valueOf(salary_details.getSalary_ta()));
+//				results.put("salary_da",Integer.valueOf(salary_details.getSalary_da()));
+//				results.put("salary_reimbursement",Integer.parseInt(String.valueOf(salary_details.getSalary_reimbursement())));
+//				results.put("salary_ca",Integer.valueOf(salary_details.getSalary_ca()));
+//				results.put("salary_others",Integer.valueOf(salary_details.getSalary_others()));
+//				results.put("salary_dpf",Integer.valueOf(salary_details.getSalary_dpf()));
+//				results.put("salary_dtax",Integer.valueOf(salary_details.getSalary_dtax()));
+//				results.put("salary_desc",Integer.valueOf(salary_details.getSalary_desc()));
+//				results.put("salary_total",Integer.valueOf(salary_details.getSalary_total()));
+//				results.put("salary_dedc",Integer.valueOf(salary_details.getSalary_dedc()));
+//				results.put("salary_slip",salary_details.getSalary_slip_filename()); 
+//				
+//				
+//			    resultArray.add(results);
+//			 
+//		 }	 
+//
+//        return resultArray;
+//	}
+	
+	//to set in edit page
 	@GetMapping("/salaries/{id}")
 	public ResponseEntity<Salary> getSalaryById(@PathVariable(value = "id") Long salaryId)
 			throws ResourceNotFoundException {
 		Salary salary = salaryRepository.findById(salaryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Salary not found for this id :: " + salaryId));
+		
+		
+		//salary.setSalary_working_days(salary.getSalary_basic());
+		//salary.setSalary_basic(salary.getSalary_basic()*(salary.getSalary_working_days()/30));
+		salary.setSalary_ca(salary.getSalary_basic()*salary.getSalary_working_days()/2700);
+		salary.setSalary_dtax(salary.getSalary_basic()*salary.getSalary_working_days()/1050);
+		salary.setSalary_ta(salary.getSalary_basic()*salary.getSalary_working_days()/1500);
+		salary.setSalary_others(salary.getSalary_basic()*salary.getSalary_working_days()/3400);
+		salary.setSalary_da(salary.getSalary_basic()*salary.getSalary_working_days()/2700);
+		salary.setSalary_dedc(salary.getSalary_basic()*salary.getSalary_working_days()/2450);
+		salary.setSalary_dpf(salary.getSalary_basic()*salary.getSalary_working_days()/1870);
+		salary.setSalary_hra(500);
+		salary.setSalary_mediclaim(salary.getSalary_basic()*salary.getSalary_working_days()/2700);
+		salary.setSalary_working_days(salary.getSalary_working_days());
+		salary.setSalary_others(salary.getSalary_basic()*salary.getSalary_working_days()/2150);
+		salary.setSalary_reimbursement(salary.getSalary_basic()*salary.getSalary_working_days()/4450);
+	//	int j = 0;
+		
+		double i=(double)(salary.getSalary_working_days());
+		System.out.println("di ---------"+(i/30.0));
+		System.out.println("i  -------"+i);
+	//	double k;
+	//	k=i/30.0;
+//		System.out.println("i  -------"+i);
+//		System.out.println("k  -------"+k);
+//		if(k==1.0) {
+//			 j=(int) (i);
+//		}
+//		if(k<0.1) {
+//			 j=(int) (k*100);
+//		}
+//		if(k>0.1) {
+//			 j=(int) (k*10);
+//		}
+//		System.out.println("j   -------"+j);
+		
+		
+		salary.setSalary_total(((double)salary.getSalary_basic())*salary.getSalary_working_days()/30.0+(double)salary.getSalary_ca()
+		+(double)salary.getSalary_da()
+		+(double)salary.getSalary_dedc()-(double)salary.getSalary_dpf()-(double)salary.getSalary_dtax()
+		+(double)salary.getSalary_hra()+(double)salary.getSalary_mediclaim()+(double)salary.getSalary_others()+
+		(double)salary.getSalary_reimbursement()+(double)salary.getSalary_ta());
+	//	(salary.getSalary_working_days()/30))
 		return ResponseEntity.ok().body(salary);
 	}
 	
@@ -169,6 +279,8 @@ public class SalaryController {
 				long unixTime = System.currentTimeMillis() / 1000L;
 				String fileName = unixTime+"_" +salary_slip.getOriginalFilename();
 				this.fileService.uploadToLocalFileSystem(salary_slip, fileName);
+				salary.setSalary_basic(11111);
+				salary.setSalary_ca(1111111);
 	            salary.setSalary_slip_filename(fileName);
 			}
 		}  catch (Exception e) {
@@ -176,7 +288,7 @@ public class SalaryController {
 		}
 		return salaryRepository.save(salary);
 	}
-    
+    //also to edit in edit page
     @PostMapping("/save-salaries")
 	public Salary saveSalary(@RequestParam("salary_slip") MultipartFile salary_slip, 
 			@ModelAttribute("form") Salary salary) {
@@ -187,6 +299,10 @@ public class SalaryController {
 			System.out.print("File URL : ");
 			System.out.print(this.fileService.uploadToLocalFileSystem(salary_slip, fileName));  
 	        salary.setSalary_slip_filename(fileName);
+//	        salary.setSalary_basic(222222);
+//			salary.setSalary_ca(222222);
+			salary.setSalary_hra(222222);
+			salary.setSalary_dtax(222222);
 		
 		}  catch (Exception e) {
 			e.printStackTrace();

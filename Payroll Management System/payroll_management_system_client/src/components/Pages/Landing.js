@@ -36,9 +36,10 @@ return (
                   <div className="row">
                      <div className="col-lg-12">
                         <div>
-                           <h1>Payroll Management system</h1>
-                           <p>Payroll Management that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations. Technology, whether it’s workforce administration software or a human capital administration solution, can often help business leaders maintain productivity more effectively in rapidly changing environments.</p>
-                           <p>Payroll Management is the process by which employers ensure workers perform their jobs to the best of their abilities so as to achieve business goals. It typically entails building and maintaining healthy relationships with employees, as well as monitoring their daily labor and measuring progress. In this way, employers can identify opportunities for improvement and recognize achievements.</p>
+                           {/* <h1>Payroll Management system</h1> */}
+                           {/* <p>Payroll Management that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations. Technology, whether it’s workforce administration software or a human capital administration solution, can often help business leaders maintain productivity more effectively in rapidly changing environments.</p> */}
+                           {/* <p>Payroll Management is the process by which employers ensure workers perform their jobs to the best of their abilities so as to achieve business goals. It typically entails building and maintaining healthy relationships with employees, as well as monitoring their daily labor and measuring progress. In this way, employers can identify opportunities for improvement and recognize achievements.</p> */}
+                           <p>A payroll management system is a platform that helps automate the process of managing employee payroll and their details.</p>
                         </div>
                      </div>
                   </div>
@@ -54,8 +55,8 @@ return (
                                  <span className="icons c1"><i className="icon-settings icons"></i></span> 
                                  <div className="box-area">
                                     <h3>Employee Management</h3>
-                                    <p>Employee that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p>
-                                    <p><a href="#">Learn More</a></p>
+                                    {/* <p>Employee that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p> */}
+                                    {/* <p><a href="#">Learn More</a></p> */}
                                  </div>
                               </div>
                            </div>
@@ -64,8 +65,8 @@ return (
                                  <span className="icons c2"><i className="icon-login icons"></i></span> 
                                  <div className="box-area">
                                     <h3>Salary Administration</h3>
-                                    <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p>
-                                    <p><a href="#">Learn More</a></p>
+                                    {/* <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p> */}
+                                    {/* <p><a href="#">Learn More</a></p> */}
                                  </div>
                               </div>
                            </div>
@@ -74,8 +75,8 @@ return (
                                  <span className="icons c3"><i className="icon-user icons"></i></span> 
                                  <div className="box-area">
                                     <h3>Áuthentication</h3>
-                                    <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p>
-                                    <p><a href="#">Learn More</a></p>
+                                    {/* <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p> */}
+                                    {/* <p><a href="#">Learn More</a></p> */}
                                  </div>
                               </div>
                            </div>
@@ -84,8 +85,8 @@ return (
                                  <span className="icons c4"><i className="icon-home icons"></i></span> 
                                  <div className="box-area">
                                     <h3>Login  Administration</h3>
-                                    <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p>
-                                    <p><a href="#">Learn More</a></p>
+                                    {/* <p>Employee administration that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations.</p> */}
+                                    {/* <p><a href="#">Learn More</a></p> */}
                                  </div>
                               </div>
                            </div>
@@ -101,8 +102,8 @@ return (
                   <div className="col-md-6">
                      <div>
                         <h2>About Payroll Management system</h2>
-                           <p>Payroll Management that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations. Technology, whether it’s workforce administration software or a human capital administration solution, can often help business leaders maintain productivity more effectively in rapidly changing environments.</p>
-                           <p>Payroll Management is the process by which employers ensure workers perform their jobs to the best of their abilities so as to achieve business goals. It typically entails building and maintaining healthy relationships with employees, as well as monitoring their daily labor and measuring progress. In this way, employers can identify opportunities for improvement and recognize achievements.</p>
+                           {/* <p>Payroll Management that uses coaching to motivate and build trust with workers can unlock enormous human potential. Yet, communication tactics alone may fall short in the face of multi-generational workforces, rising numbers of freelance workers and complex regulations. Technology, whether it’s workforce administration software or a human capital administration solution, can often help business leaders maintain productivity more effectively in rapidly changing environments.</p> */}
+                           <p>A payroll management system is a platform that helps automate the process of managing employee payroll and their details.</p>
                      </div>
                      <br/>
                   </div>
